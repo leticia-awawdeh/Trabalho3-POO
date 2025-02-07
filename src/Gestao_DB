@@ -1,0 +1,33 @@
+CREATE DATABASE Gestao_DB ;
+USE Gestao_DB;
+CREATE TABLE Equipamentos(
+	 codigo INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+     nome VARCHAR(50) NOT NULL,
+     descricao VARCHAR(100) NOT NULL,
+     valorDiario DOUBLE NOT NULL,
+	 status ENUM('disponivel','alugado') NOT NULL
+);
+
+CREATE TABLE Clientes (
+  cpf VARCHAR(14) PRIMARY KEY NOT NULL,
+  nome VARCHAR(50) NOT NULL ,
+  telefone VARCHAR(19) NOT NULL
+-- varivel de multas a ser adicionada
+);
+CREATE TABLE Locacao (
+    id_cliente VARCHAR(14),
+    id_equipamento INT,
+    data_inicio DATE,
+    data_fim DATE,
+    multa DECIMAL(10,2) DEFAULT 0.00,
+    PRIMARY KEY (id_cliente, id_equipamento),  
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(cpf),
+    FOREIGN KEY (id_equipamento) REFERENCES Equipamentos(Codigo)
+);
+
+INSERT INTO CLIENTES (cpf,nome,telefone) VALUES('136.128.186-35','Victor','+55 35 988390392')
+
+SELECT * FROM Clientes; 	
+
+	
+
