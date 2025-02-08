@@ -25,7 +25,7 @@ CREATE TABLE Locacao (
     FOREIGN KEY (id_equipamento) REFERENCES Equipamentos(Codigo)
 );
 
-INSERT INTO CLIENTES (cpf,nome,telefone) VALUES('136.128.186-35','Victor','+55 35 988390392')
+INSERT INTO CLIENTES (cpf,nome,telefone) VALUES('156.199.355-88','cleber','+55 35 940028922')
 
 SELECT * FROM Clientes; 	
 
